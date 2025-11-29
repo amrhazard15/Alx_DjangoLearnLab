@@ -1,15 +1,21 @@
 from django.urls import path
 from .views import (
-    BookListCreateView, BookRetrieveUpdateDestroyView,
-    AuthorListCreateView, AuthorRetrieveUpdateDestroyView
+    BookListView, BookDetailView, BookCreateView, BookUpdateView, BookDeleteView,
+    AuthorListView, AuthorDetailView, AuthorCreateView, AuthorUpdateView, AuthorDeleteView
 )
 
 urlpatterns = [
-    # Book URLs
-    path('books/', BookListCreateView.as_view(), name='book-list-create'),
-    path('books/<int:pk>/', BookRetrieveUpdateDestroyView.as_view(), name='book-detail-update-delete'),
+    # Books
+    path('books/', BookListView.as_view(), name='book-list'),
+    path('books/<int:pk>/', BookDetailView.as_view(), name='book-detail'),
+    path('books/create/', BookCreateView.as_view(), name='book-create'),
+    path('books/update/<int:pk>/', BookUpdateView.as_view(), name='book-update'),
+    path('books/delete/<int:pk>/', BookDeleteView.as_view(), name='book-delete'),
 
-    # Author URLs
-    path('authors/', AuthorListCreateView.as_view(), name='author-list-create'),
-    path('authors/<int:pk>/', AuthorRetrieveUpdateDestroyView.as_view(), name='author-detail-update-delete'),
+    # Authors
+    path('authors/', AuthorListView.as_view(), name='author-list'),
+    path('authors/<int:pk>/', AuthorDetailView.as_view(), name='author-detail'),
+    path('authors/create/', AuthorCreateView.as_view(), name='author-create'),
+    path('authors/update/<int:pk>/', AuthorUpdateView.as_view(), name='author-update'),
+    path('authors/delete/<int:pk>/', AuthorDeleteView.as_view(), name='author-delete'),
 ]
