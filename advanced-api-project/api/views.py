@@ -51,6 +51,4 @@ class AuthorUpdateView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated]
 
 class AuthorDeleteView(generics.DestroyAPIView):
-    queryset = Author.objects.all()
-    serializer_class = AuthorSerializer
-    permission_classes = [IsAuthenticated]
+    queryset = Author.ob
