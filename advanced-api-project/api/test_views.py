@@ -13,6 +13,7 @@ class BookAPITests(APITestCase):
         # Client for authenticated requests
         self.auth_client = APIClient()
         self.auth_client.login(username="amr", password="123456")
+        self.client.login(username="testuser", password="testpassword")
 
         # Create authors
         self.author1 = Author.objects.create(name="John Doe")
@@ -116,3 +117,4 @@ class BookAPITests(APITestCase):
         url = reverse("book-list") + "?ordering=-publication_year"
         response = self.client.get(url)
         self.assertEqual(response.data[0]["publication_year"], 2022)
+
