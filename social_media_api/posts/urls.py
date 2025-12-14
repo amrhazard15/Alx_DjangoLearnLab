@@ -2,6 +2,7 @@ from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from .models import CustomUser
 from .serializers import RegisterSerializer
+from .views import like_post, unlike_post
 
 router = DefaultRouter()
 router.register(r'posts', PostViewSet, basename='post')
@@ -35,8 +36,11 @@ class UnfollowUserView(generics.GenericAPIView):
         request.user.following.remove(user_to_unfollow)
         return Response({"message": f"You have unfollowed {user_to_unfollow.username}"})
 
-urlpatterns = [
+urlpatterns += [
     path('feed/', feed_view, name='feed'),  
-    path('', include(router.urls)),        
+    path('', include(router.urls)),
+    path('posts/<int:pk>/like/', like_post, name='like-post'),
+    path('posts/<int:pk>/unlike/', unlike_post, name='unlike-post'),
 ]
+
 
