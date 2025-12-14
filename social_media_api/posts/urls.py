@@ -3,6 +3,10 @@ from rest_framework.response import Response
 from .models import CustomUser
 from .serializers import RegisterSerializer
 
+router = DefaultRouter()
+router.register(r'posts', PostViewSet, basename='post')
+router.register(r'comments', CommentViewSet, basename='comment')
+
 class FollowUserView(generics.GenericAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
@@ -31,4 +35,8 @@ class UnfollowUserView(generics.GenericAPIView):
         request.user.following.remove(user_to_unfollow)
         return Response({"message": f"You have unfollowed {user_to_unfollow.username}"})
 
+urlpatterns = [
+    path('feed/', feed_view, name='feed'),  
+    path('', include(router.urls)),        
+]
 
