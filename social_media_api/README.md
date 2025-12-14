@@ -1,26 +1,38 @@
-# Social Media API Deployment
+# Social Media API
 
-## Deployment Overview
-This Django REST API was prepared for production deployment using Heroku.
+## Project Overview
+This project is a Social Media API built using Django and Django REST Framework (DRF).  
+It provides core social media features such as user authentication, posts, comments, follows, likes, notifications, and a user feed.
 
-## Production Settings
-- DEBUG set to False
-- ALLOWED_HOSTS configured
-- Security settings enabled
-- Gunicorn used as WSGI server
+The project was developed as part of the ALX Back-End program to practice building and deploying a RESTful API similar to real-world applications.
 
-## Static Files
-Static files are collected using Django collectstatic.
+---
 
-## Hosting Service
-- Platform: Heroku
-- WSGI Server: Gunicorn
-- Database: PostgreSQL
+## Features
+- User registration and authentication using token-based authentication
+- Create, read, update, and delete posts
+- Comment on posts
+- Follow and unfollow users
+- View a personalized feed of posts from followed users
+- Like and unlike posts
+- Receive notifications for likes, comments, and new followers
 
-## Environment Variables
-- SECRET_KEY
-- DEBUG
-- DATABASE_URL
+---
 
-## Live URL
-https://example-social-media-api.herokuapp.com/
+## Technologies Used
+- Python
+- Django
+- Django REST Framework
+- Gunicorn
+- SQLite (Development)
+- PostgreSQL (Production – planned)
+- Heroku (Deployment platform)
+
+---
+
+## Installation and Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/<your-username>/Alx_DjangoLearnLab.git
+cd Alx_DjangoLearnLab/social_media_api
