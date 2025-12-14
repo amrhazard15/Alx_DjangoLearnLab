@@ -2,13 +2,13 @@ from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from .models import CustomUser
 from .serializers import RegisterSerializer
-
+"", "
 class FollowUserView(generics.GenericAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request, user_id):
         try:
-            user_to_follow = CustomUser.objects.get(id=user_id)  
+            user_to_follow = CustomUser.objects.all()  
         except CustomUser.DoesNotExist:
             return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
         
@@ -24,9 +24,10 @@ class UnfollowUserView(generics.GenericAPIView):
 
     def post(self, request, user_id):
         try:
-            user_to_unfollow = CustomUser.objects.get(id=user_id)  
+            user_to_unfollow = CustomUser.objects.all() 
         except CustomUser.DoesNotExist:
             return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
         
         request.user.following.remove(user_to_unfollow)
         return Response({"message": f"You have unfollowed {user_to_unfollow.username}"})
+
