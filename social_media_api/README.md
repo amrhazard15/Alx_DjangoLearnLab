@@ -34,5 +34,5 @@ The project was developed as part of the ALX Back-End program to practice buildi
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/Alx_DjangoLearnLab.git
+git clone https://github.com/<amrhazard15>/Alx_DjangoLearnLab.git
 cd Alx_DjangoLearnLab/social_media_api
