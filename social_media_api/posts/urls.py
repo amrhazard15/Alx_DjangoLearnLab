@@ -2,7 +2,7 @@ from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from .models import CustomUser
 from .serializers import RegisterSerializer
-"", "
+
 class FollowUserView(generics.GenericAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
@@ -30,4 +30,5 @@ class UnfollowUserView(generics.GenericAPIView):
         
         request.user.following.remove(user_to_unfollow)
         return Response({"message": f"You have unfollowed {user_to_unfollow.username}"})
+
 
