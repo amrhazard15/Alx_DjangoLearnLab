@@ -30,9 +30,23 @@ The project was developed as part of the ALX Back-End program to practice buildi
 
 ---
 
+## Known Issues / Future Improvements
+- Notifications feature requires further testing.
+- Feed performance can be improved for large datasets.
+- Production database (PostgreSQL) setup is planned.
+
+---
+
+## Demo Video
+Loom demo video link will be added here.
+
+---
+
 ## Installation and Setup
 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/<amrhazard15>/Alx_DjangoLearnLab.git
 cd Alx_DjangoLearnLab/social_media_api
+
+
