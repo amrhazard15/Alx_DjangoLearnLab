@@ -33,13 +33,20 @@
 ## 📂 Project Structure
 
 social_media_api/
-├── accounts/ # User management
-├── posts/ # Posts management
-├── notifications/ # Notifications system
-├── social_media_api/ # Project settings
-├── db.sqlite3 # SQLite database
-├── requirements.txt # Python dependencies
-└── README.md
+
+               ├── accounts/ # User management
+               
+               ├── posts/ # Posts management
+               
+               ├── notifications/ # Notifications system
+               
+               ├── social_media_api/ # Project settings
+               
+               ├── db.sqlite3 # SQLite database
+               
+               ├── requirements.txt # Python dependencies
+               
+               └── README.md
 
 ---
 
