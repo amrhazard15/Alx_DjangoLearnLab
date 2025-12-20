@@ -119,8 +119,9 @@ Advanced search and filters for users and posts
 
 Real-time notifications using WebSockets
 
-👤 Author
-****Amr Khaled Saied Elsayed – GitHub Profile****
-
+=================
+👤 **Author**
+**Amr Khaled (Hazard) – [GitHub Profile](https://github.com/amrhazard15)**
+=================
 📄 License
 This project is licensed under the MIT License.
