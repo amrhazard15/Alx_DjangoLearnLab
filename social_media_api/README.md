@@ -33,6 +33,7 @@
 ## 📂 Project Structure
 
 social_media_api/
+
                ├── accounts/ # User management
                ├── posts/ # Posts management
                ├── notifications/ # Notifications systems
