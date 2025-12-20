@@ -35,17 +35,11 @@
 social_media_api/
 
                ├── accounts/ # User management
-               
                ├── posts/ # Posts management
-               
-               ├── notifications/ # Notifications system
-               
+               ├── notifications/ # Notifications systems
                ├── social_media_api/ # Project settings
-               
-               ├── db.sqlite3 # SQLite database
-               
+               ├── db.sqlite3 # SQLite database 
                ├── requirements.txt # Python dependencies
-               
                └── README.md
 
 ---
