@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import RegisterView, LoginView
-from .views import FollowUserView, UnfollowUserView
+from django.http import HttpResponse
+from .views import RegisterView, LoginView, FollowUserView, UnfollowUserView
 
-urlpatterns += [
+urlpatterns = [
+    path('', lambda request: HttpResponse("Welcome to Accounts API"), name='accounts-home'),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
     path('follow/<int:user_id>/', FollowUserView.as_view(), name='follow-user'),

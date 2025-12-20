@@ -6,7 +6,7 @@ from django.contrib.auth.password_validation import validate_password
 User = get_user_model()
 
 class RegisterSerializer(serializers.ModelSerializer):
-     password = serializers.CharField()
+    password = serializers.CharField()
 
     class Meta:
         model = User
@@ -20,11 +20,6 @@ class RegisterSerializer(serializers.ModelSerializer):
             bio=validated_data.get('bio', ''),
             profile_picture=validated_data.get('profile_picture', None)
         )
-        
+
         Token.objects.create(user=user)
         return user
-
-
-
-
-
