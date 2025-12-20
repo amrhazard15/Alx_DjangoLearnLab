@@ -40,6 +40,7 @@ social_media_api/
                ├── social_media_api/ # Project settings
                ├── db.sqlite3 # SQLite database 
                ├── requirements.txt # Python dependencies
+               ├── staticfiles
                └── README.md
 
 ---
