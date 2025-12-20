@@ -1,52 +1,126 @@
-# Social Media API
+# 🌐 Social Media API
 
-## Project Overview
-This project is a Social Media API built using Django and Django REST Framework (DRF).  
-It provides core social media features such as user authentication, posts, comments, follows, likes, notifications, and a user feed.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Django](https://img.shields.io/badge/Django-5.2-green)
+![REST](https://img.shields.io/badge/REST-API-red)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-The project was developed as part of the ALX Back-End program to practice building and deploying a RESTful API similar to real-world applications.
-
----
-
-## Features
-- User registration and authentication using token-based authentication
-- Create, read, update, and delete posts
-- Comment on posts
-- Follow and unfollow users
-- View a personalized feed of posts from followed users
-- Like and unlike posts
-- Receive notifications for likes, comments, and new followers
+**Social Media API** is a complete Django REST Framework project that powers a modern social media platform. Users can register, login, manage posts, follow/unfollow other users, and receive real-time notifications.
 
 ---
 
-## Technologies Used
-- Python
-- Django
-- Django REST Framework
-- Gunicorn
-- SQLite (Development)
-- PostgreSQL (Production – planned)
-- Heroku (Deployment platform)
+## 🚀 Features
+
+- **User Authentication & Tokens** 🔐  
+  - Register a new user  
+  - Login with token-based authentication  
+
+- **Social Interactions** 🤝  
+  - Follow and unfollow users  
+  - Create, update, and delete posts  
+  - Like posts  
+
+- **Notifications System** 🔔  
+  - Receive notifications for important events  
+  - Mark notifications as read  
+
+- **API Documentation** 📚  
+  - Swagger UI and Redoc integration  
+  - Fully browsable API  
 
 ---
 
-## Known Issues / Future Improvements
-- Notifications feature requires further testing.
-- Feed performance can be improved for large datasets.
-- Production database (PostgreSQL) setup is planned.
+## 📂 Project Structure
+
+social_media_api/
+├── accounts/ # User management
+├── posts/ # Posts management
+├── notifications/ # Notifications system
+├── social_media_api/ # Project settings
+├── db.sqlite3 # SQLite database
+├── requirements.txt # Python dependencies
+└── README.md
 
 ---
 
-## Demo Video
-Loom demo video link will be added here.
+## 🖥️ Installation
 
----
+1. **Clone the repository**
 
-## Installation and Setup
-
-### 1. Clone the Repository
 ```bash
-git clone https://github.com/<amrhazard15>/Alx_DjangoLearnLab.git
-cd Alx_DjangoLearnLab/social_media_api
+git clone https://github.com/amrhazard15/Alx_DjangoLearnLab.git
+cd social_media_api
+```
+---
 
+2. **Create a virtual environment**
+```bash
+python -m venv venv
+# Activate
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # Linux/Mac
+```
+---
 
+3. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+---
+
+4. **Run migrations**
+```bash
+python manage.py migrate
+```
+5. **Start the development server**
+```bash
+python manage.py runserver
+```
+
+---
+
+6. **Access the API**
+
+**Base API**: http://127.0.0.1:8000/api/
+
+**Swagger UI**: http://127.0.0.1:8000/swagger/
+
+**Redoc**: http://127.0.0.1:8000/redoc/
+  
+----------------
+
+🔗 API Endpoints
+Endpoint	                      Method	              Description
+/accounts/register/ 	          POST	                Register a new user
+/accounts/login/	              POST	                Login and retrieve token
+/accounts/follow/<id>/          POST	                Follow a user
+/accounts/unfollow/<id>/	      POST	                Unfollow a user
+/posts/                         GET/POST	            List or create posts
+/posts/<id>/                   GET/PUT/DELETE	        Manage a specific post
+/notifications/ 	             GET	                  View notifications
+
+------------
+
+🛠️ Technologies Used
+* Python 3.11
+* Django 5.2
+* Django REST Framework
+* drf-spectacular (Swagger/OpenAPI)
+* SQLite
+  
+--------------
+
+🔮 Future Improvements
+Add an interactive frontend using React or Vue.js
+
+Multimedia support for posts (images/videos)
+
+Advanced search and filters for users and posts
+
+Real-time notifications using WebSockets
+
+👤 Author
+****Amr Khaled Saied Elsayed – GitHub Profile****
+
+📄 License
+This project is licensed under the MIT License.
